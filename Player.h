@@ -2,7 +2,7 @@
 #include "Entity.h" 
 #include "Monster.h"
 
-/* ќбъ€вление класса  Player*/
+/* ќбъ€вление класса  Player, наследованного от Entity */
 
 class Monster;
 

@@ -47,7 +47,7 @@ bool Monster::AttackPlayer(Player &player) {
 	if (attackMod <= 0)
 		attackMod = 1;
 
-	std::cout << "\n  Атака монстра на игрока. Модификатор атаки: " << attackMod;
+	std::cout << "\n\n  Атака монстра на игрока. Модификатор атаки: " << attackMod;
 	std::cout << "\n\n  Процесс атаки:";
 
 	for (int i = 0; i < attackMod; i++) {

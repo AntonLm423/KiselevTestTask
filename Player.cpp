@@ -72,7 +72,7 @@ bool Player::AttackMonster(Monster &monster)
 	if (attackMod <= 0)
 		attackMod = 1;
 
-	std::cout << "\n  Атака игрока на монстра. Модификатор атаки: " << attackMod;
+	std::cout << "\n\n  Атака игрока на монстра. Модификатор атаки: " << attackMod;
 	std::cout << "\n\n  Процесс атаки:";
 
 	for (int i = 0; i < attackMod; i++) {
@@ -120,7 +120,7 @@ bool Player::AttackPlayer(Player& secondPlayer) {
 		attackMod = 1;
 
 
-	std::cout << "\n  Атака игрока на монстра. Модификатор атаки: " << attackMod;
+	std::cout << "\n\n  Атака игрока на монстра. Модификатор атаки: " << attackMod;
 	std::cout << "\n\n  Процесс атаки:";
 
 	srand((unsigned)time(NULL));

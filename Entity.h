@@ -10,7 +10,7 @@ class Entity
 {
 protected:
 
-	int totalHealth; // всего здоровья
+	int totalHealth; // всего здоровья для конктретно сущность
 	int currentHealth; // здоровье в текущий момент времени(после битвы)
 
 	int damage;

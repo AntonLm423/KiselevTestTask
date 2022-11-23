@@ -1,6 +1,6 @@
 #pragma once
 
-/* Файл константы */
+/* Файл констант */
 
 /* Player */
 const int MAX_PLAYER_HEALTH = 10;

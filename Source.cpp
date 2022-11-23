@@ -6,11 +6,11 @@
 #include<iostream>
 #include<windows.h> 
 #include<locale>
+#include"Entity.h"
 #include"Player.h"
+#include"Monster.h"
 
 using namespace std;
-
-
 
 int main()
 {
@@ -23,6 +23,7 @@ int main()
 	{
 
 		cout << "\n***ПЕРВИЧНЫЙ ВВОД ПАРАМЕТРОВ ИГРОКА***\n";
+		cout << "    *все числа должы быть целыми\n\n";
 		cout << "  Введите здоровье игрока: ";
 		cin >> health;
 		cout << "  Введите урон игрока: ";
@@ -40,27 +41,27 @@ int main()
 		);
 
 	// создаём оъект игрока через конструктор с параметром
-	Player player(health, damage, attack, protection);
+	Player player((int)health, (int)damage, (int)attack, (int)protection);
 
 	/*  ГЛАВНОЕ МЕНЮ  */
 	int answer = -1;
 	do {
 		system("cls");
 		
-		cout << "***ГЛАВНОЕ МЕНЮ***";
-		cout << "\n\n Выберите действие:";
-		cout << "\n  (1) Показать мои параметры";
-		cout << "\n  (2) Исцелить персонажа";
-		cout << "\n  (3) Атаковать случайного монстра";
-		cout << "\n  (4) Инициировать атаку случайного монстра на себя";
-		cout << "\n  (5) Атаковать случайного игрока";
-		cout << "\n  (0) Выход";
-		cout << "\n\n Ввод: ";
+		cout << "***ГЛАВНОЕ МЕНЮ***" <<
+			"\n\n Выберите действие:" <<
+			"\n  (1) Показать мои параметры" <<
+			"\n  (2) Исцелить персонажа" <<
+			"\n  (3) Атаковать случайного монстра" <<
+			"\n  (4) Инициировать атаку случайного монстра на себя" <<
+			"\n  (5) Атаковать случайного игрока" <<
+			"\n  (0) Выход" <<
+			"\n\n Ввод: ";
 
 		cin >> answer;
 		
 		switch (answer) {
-			// показать параметры игрока
+			/* ПОКАЗАТЬ ПАРАМЕТРЫ ИГРОКА */
 		case 1: {
 
 			system("cls");
@@ -75,7 +76,7 @@ int main()
 			system("pause");
 			break;
 		}
-			  // исцелить игрока
+			  /* ИСЦЕЛИТЬ ИГРОКА */
 		case 2: {
 			system("cls");
 
@@ -88,7 +89,7 @@ int main()
 			system("pause");
 			break;
 		}
-			  // атаковать случайно созданного монстра
+			  /* АТАКОВАТЬ СЛУЧАЙНО СОЗДАНННОГО МОНСТРА */
 		case 3: {
 			system("cls");
 
@@ -123,7 +124,7 @@ int main()
 			system("pause");
 			break;
 		}
-			  // инициируем нападение случайнно созданного монстра на игрока
+			  /* ИНЦИИРОВАТЬ НАПАДЕНИЕ СЛУЧАЙНО СОЗДАННОГО МОНСТРА НА СБЕЯ */
 		case 4: {
 			system("cls");
 			
@@ -142,6 +143,7 @@ int main()
 					MIN_MONSTER_PROTECTION + rand() % MAX_MONSTER_PROTECTION
 				);
 
+				// выводим его параметры
 				cout << "\n\n  Случайный монстр: " <<
 					"\n  Здоровье: " << randMonster.getCurrentHealth() << '/' << player.getTotalHealth() <<
 					"\n  Урон: " << randMonster.getDamage() <<
@@ -159,7 +161,7 @@ int main()
 			system("pause");
 			break;
 		}
-		// атака на случайно созданного игрока
+		/* АТАКА НА СЛУЧАЙНО СОЗДАННОГО ИГРОКА */
 		case 5: {
 			system("cls");
 
@@ -177,6 +179,7 @@ int main()
 					MIN_PLAYER_PROTECTION + rand() % MAX_PLAYER_PROTECTION
 				);
 
+				// выводим его параметры
 				cout << "\n\n  Случайный игрок: " <<
 					"\n  Здоровье: " << randPlayer.getCurrentHealth() << '/' << randPlayer.getTotalHealth() <<
 					"\n  Урон: " << randPlayer.getDamage() <<
@@ -198,6 +201,9 @@ int main()
 		}
 
 	} while (answer != 0);
+
+
+
 
 	cout << "\n\nТестовое задание для школы разработчиков Heads and Hands\n";
 	system("pause");
